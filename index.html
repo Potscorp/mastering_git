@@ -3,227 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neon Nights | Private Party Pub</title>
+<title>Private Pub Party</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
     scroll-behavior:smooth;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#0f0f0f;
+    background:#111;
     color:#fff;
 }
 
-/* Header */
-
-header{
+nav{
     position:fixed;
-    width:100%;
     top:0;
-    left:0;
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 8%;
-    background:rgba(0,0,0,.6);
-    backdrop-filter:blur(10px);
+    padding:18px 60px;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(5px);
     z-index:1000;
 }
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#ff2d95;
+nav h2{
+    color:#ff3b6b;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
     margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
     transition:.3s;
 }
 
-nav a:hover{
-    color:#ff2d95;
+nav ul li a:hover{
+    color:#ff3b6b;
 }
-
-/* Hero */
 
 .hero{
     height:100vh;
-    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
-    url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1600&q=80") center/cover;
+    background:url("https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1400&q=80") center/cover;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
 }
 
+.overlay{
+    background:rgba(0,0,0,.65);
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
 .hero h1{
-    font-size:65px;
+    font-size:60px;
+    margin-bottom:20px;
 }
 
 .hero p{
-    margin:20px 0;
-    font-size:20px;
-}
-
-.btn{
-    display:inline-block;
-    background:#ff2d95;
-    color:white;
-    padding:15px 35px;
-    border-radius:40px;
-    text-decoration:none;
-    transition:.4s;
-}
-
-.btn:hover{
-    transform:scale(1.08);
-    background:#ff0080;
-}
-
-/* Sections */
-
-section{
-    padding:90px 8%;
-}
-
-h2{
-    text-align:center;
-    color:#ff2d95;
-    margin-bottom:40px;
-    font-size:40px;
-}
-
-/* Cards */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:#1d1d1d;
-    border-radius:15px;
-    overflow:hidden;
-    transition:.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.card h3{
-    padding:15px;
-}
-
-.card p{
-    padding:0 15px 20px;
-    color:#ccc;
-}
-
-/* Booking */
-
-.booking{
-    text-align:center;
-    background:#161616;
-}
-
-input{
-    width:100%;
-    max-width:500px;
-    padding:15px;
-    margin:10px;
-    border:none;
-    border-radius:8px;
-    font-size:16px;
+    font-size:22px;
+    margin-bottom:30px;
 }
 
 button{
     padding:15px 35px;
-    background:#ff2d95;
-    color:white;
     border:none;
-    border-radius:30px;
-    cursor:pointer;
+    background:#ff3b6b;
+    color:white;
     font-size:18px;
+    cursor:pointer;
+    border-radius:30px;
+    transition:.3s;
 }
 
 button:hover{
-    background:#ff0080;
+    background:#ff1744;
+    transform:scale(1.05);
+}
+
+section{
+    padding:90px 10%;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.card{
+    width:280px;
+    background:#1e1e1e;
+    border-radius:12px;
+    padding:25px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px #ff3b6b;
+}
+
+.card h3{
+    margin-bottom:15px;
 }
 
 footer{
+    background:#000;
     text-align:center;
     padding:25px;
-    background:#000;
-    color:#999;
+    color:#aaa;
 }
 
-/* Modal */
+@media(max-width:768px){
 
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.8);
-    display:none;
-    justify-content:center;
+nav{
+    flex-direction:column;
+    padding:20px;
+}
+
+nav ul{
+    margin-top:10px;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.cards{
+    flex-direction:column;
     align-items:center;
 }
 
-.popup{
-    background:white;
-    color:black;
-    padding:35px;
-    border-radius:12px;
-    text-align:center;
-    width:90%;
-    max-width:400px;
-}
-
-.popup button{
-    margin-top:20px;
 }
 </style>
 
 </head>
 <body>
 
-<header>
-<div class="logo">🍸 Neon Nights</div>
-
 <nav>
-<a href="#">Home</a>
-<a href="#events">Events</a>
-<a href="#gallery">Gallery</a>
-<a href="#book">Book</a>
-</nav>
+<h2>🍻 Private Pub</h2>
 
-</header>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
 
 <section class="hero">
 
-<div>
-<h1>Private Party Pub</h1>
+<div class="overlay">
 
-<p>Music • Drinks • VIP Lounge • DJ Nights</p>
+<h1>PRIVATE PUB PARTY</h1>
 
-<a href="#book" class="btn">Reserve Now</a>
+<p>Music • Cocktails • Dance • DJ Night</p>
+
+<button onclick="reserveTable()">Reserve Your Table</button>
 
 </div>
+
+</section>
+
+<section id="about">
+
+<h2>About Us</h2>
+
+<br>
+
+<p>
+Enjoy unforgettable nights with premium drinks, live DJs,
+VIP lounge access, and an amazing dance floor.
+Whether it's a birthday, bachelor party, or weekend celebration,
+our private pub delivers the ultimate nightlife experience.
+</p>
 
 </section>
 
@@ -234,117 +214,75 @@ footer{
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80">
-<h3>Friday DJ Night</h3>
-<p>Dance with top DJs until sunrise.</p>
+<h3>🎧 DJ Night</h3>
+<p>Friday 8 PM - 2 AM</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80">
-<h3>Birthday Parties</h3>
-<p>Exclusive private rooms with premium service.</p>
+<h3>🍸 Cocktail Party</h3>
+<p>Saturday 7 PM - Midnight</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80">
-<h3>Corporate Events</h3>
-<p>Luxury venue for business celebrations.</p>
+<h3>🎉 Neon Party</h3>
+<p>Sunday 8 PM - 1 AM</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="gallery">
+<section id="contact">
 
-<h2>Gallery</h2>
+<h2>Contact</h2>
 
-<div class="cards">
+<br>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=80">
-</div>
+<p>📍 Downtown City</p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=80">
-</div>
+<p>📞 +91 9876543210</p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80">
-</div>
+<p>📧 party@example.com</p>
 
-</div>
+<br>
 
-</section>
-
-<section id="book" class="booking">
-
-<h2>Book Your Private Party</h2>
-
-<input type="text" id="name" placeholder="Your Name"><br>
-
-<input type="email" id="email" placeholder="Email"><br>
-
-<input type="date" id="date"><br>
-
-<button onclick="bookNow()">Book Now</button>
+<button onclick="contactUs()">Book Now</button>
 
 </section>
 
 <footer>
 
-© 2026 Neon Nights Pub | Private Events & VIP Lounge
+© 2026 Private Pub Party | All Rights Reserved
 
 </footer>
 
-<div class="modal" id="modal">
-
-<div class="popup">
-
-<h2>🎉 Booking Request Sent</h2>
-
-<p id="message"></p>
-
-<button onclick="closeModal()">Close</button>
-
-</div>
-
-</div>
-
 <script>
 
-function bookNow(){
-
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let date=document.getElementById("date").value;
-
-if(name=="" || email=="" || date==""){
-alert("Please fill all fields.");
-return;
+function reserveTable(){
+    alert("🎉 Thank you! Your reservation request has been received.");
 }
 
-document.getElementById("message").innerHTML=
-"Thank you <b>"+name+"</b>!<br><br>Your reservation request for <b>"+date+"</b> has been received. We'll contact you shortly.";
-
-document.getElementById("modal").style.display="flex";
-
+function contactUs(){
+    alert("📞 Our team will contact you shortly!");
 }
 
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
+// Fade animation
+const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll",function(){
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.style.opacity="1";
+            entry.target.style.transform="translateY(0)";
+        }
+    });
+});
 
-const header=document.querySelector("header");
-
-if(window.scrollY>80){
-header.style.background="#000";
-}else{
-header.style.background="rgba(0,0,0,.6)";
-}
-
+sections.forEach(section=>{
+    section.style.opacity="0";
+    section.style.transform="translateY(40px)";
+    section.style.transition="1s";
+    observer.observe(section);
 });
 
 </script>
